@@ -1,0 +1,23 @@
+{
+  "name": "aobj",
+  "version": "1.0.0",
+  "description": "aobj - Object Manipulation Module for Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChoqueCastroLD/aobj.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChoqueCastroLD/aobj/issues"
+  },
+  "homepage": "https://github.com/ChoqueCastroLD/aobj#readme",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
