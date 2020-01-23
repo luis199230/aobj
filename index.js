@@ -1,5 +1,16 @@
 module.exports = {
 
+    map(obj = {}, action = (key, value) => {return {key, value}}) {
+        let newObj = {};
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                let {key: newKey, value: newValue} = action(key, obj[key]);
+                newObj[newKey] = newValue;
+            }
+        }
+        return newObj;
+    },
+
     extract(obj = {}, keys = [] || '') {
         if(typeof keys == 'string') keys = [keys];
         return Object.keys(obj)
