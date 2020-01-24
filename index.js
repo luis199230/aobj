@@ -10,6 +10,54 @@ module.exports = {
         }
         return newObj;
     },
+    
+    mapValues(obj = {}, action = (value) => {return value}) {
+        let newObj = {};
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                newObj[key] = action(obj[key]);
+            }
+        }
+        return newObj;
+    },
+    
+    mapKeys(obj = {}, action = (key) => {return key}) {
+        let newObj = {};
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                let newKey = action(key);
+                newObj[newKey] = obj[key];
+            }
+        }
+        return newObj;
+    },
+    
+    traverse(obj = {}, action = (key, value) => {return {key, value}}) {
+        let newObj = {};
+        for (const key in obj) {
+            const {key: newKey, value: newValue} = action(key, obj[key]);
+            newObj[newKey] = this.isObject(obj[key]) ? this.traverse(obj[key], action) : newValue;
+        }
+        return newObj;
+    },
+    
+    traverseKeys(obj = {}, action = (key) => {return key}) {
+        let newObj = {};
+        for (const key in obj) {
+            const newKey = action(key);
+            newObj[newKey] = this.isObject(obj[key]) ? this.traverseKeys(obj[key], action) : obj[key];
+        }
+        return newObj;
+    },
+    
+    traverseValues(obj = {}, action = (value) => {return value}) {
+        let newObj = {};
+        for (const key in obj) {
+            const newValue = action(obj[key]);
+            newObj[key] = this.isObject(obj[key]) ? this.traverseValues(obj[key], action) : newValue;
+        }
+        return newObj;
+    },
 
     extract(obj = {}, keys = [] || '') {
         if(typeof keys == 'string') keys = [keys];
@@ -34,9 +82,54 @@ module.exports = {
         }
         return true;
     },
-
+    
     isEmpty(obj = {}) {
-        return Object.entries(obj).length === 0 && obj.constructor === Object;
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                return false;
+            }
+        }
+        return true;
+    },
+    
+    isObject(obj = {}) {
+        if(obj == undefined)
+            return false;
+        if(obj == null)
+            return false;
+        if(obj instanceof Array)
+            return false;
+        if(typeof obj == 'string')
+            return false;
+        if(typeof obj == 'number')
+            return false;
+        if(typeof obj == 'boolean')
+            return false;
+        if(typeof obj == 'symbol')
+            return false;
+        if(typeof obj == 'bigint')
+            return false;
+        if(typeof obj == 'function')
+            return false;
+        if(( !obj || toString.call( obj ) !== "[object Object]" ))
+            return false;
+        if(!(obj instanceof Object))
+            return false;
+        return true;
+    },
+    
+    clone(obj = {}) {
+        if (typeof obj !== 'object' || obj === null) return obj;
+        let newObj, i;
+        if (obj instanceof Array) {
+            let l;
+            newObj = [];
+            for (i = 0, l = obj.length; i < l; i++) newObj[i] = this.clone(obj[i]);
+            return newO;
+        }
+        newObj = {};
+        for (i in obj) if (obj.hasOwnProperty(i)) newObj[i] = this.clone(obj[i]);
+        return newObj;
     }
 
 }

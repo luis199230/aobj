@@ -1,6 +1,6 @@
 {
   "name": "aobj",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "aobj - Object Manipulation Module for Nodejs",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/ChoqueCastroLD/aobj.git"
   },
-  "keywords": [],
+  "keywords": [
+    "object", "utilities", "manipulation", "deep", "map", "clone", "isObject", "isEmpty", "traverse"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
