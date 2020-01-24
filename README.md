@@ -321,3 +321,23 @@ console.log(newPerson);
 }
 */
 ````
+
+## TODO:
+
+### Tests for: 
+
+- [ ] deepFilter
+- [ ] deepFilterKeys
+- [ ] deepFilterValues
+- [ ] filter
+- [ ] filterKeys
+- [ ] filterValues
+
+### Examples for: 
+
+- [ ] deepFilter
+- [ ] deepFilterKeys
+- [ ] deepFilterValues
+- [ ] filter
+- [ ] filterKeys
+- [ ] filterValues

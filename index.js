@@ -130,6 +130,71 @@ module.exports = {
         newObj = {};
         for (i in obj) if (obj.hasOwnProperty(i)) newObj[i] = this.clone(obj[i]);
         return newObj;
+    },
+    
+    deepFilter(obj = {}, filter = (key, value) => {return (true || false)}) {
+        let newObj = {};
+        for (const key in obj) {
+            if(filter(key, obj[key])) {
+                newObj[key] = this.isObject(obj[key]) ? this.deepFilter(obj[key], action) : obj[key];
+            }
+        }
+        return newObj;
+    },
+    
+    deepFilterKeys(obj = {}, filter = (key) => {return (true || false)}) {
+        let newObj = {};
+        for (const key in obj) {
+            if(filter(key)) {
+                newObj[key] = this.isObject(obj[key]) ? this.deepFilterKeys(obj[key], action) : obj[key];
+            }
+        }
+        return newObj;
+    },
+    
+    deepFilterValues(obj = {}, filter = (value) => {return (true || false)}) {
+        let newObj = {};
+        for (const key in obj) {
+            if(filter(obj[key])) {
+                newObj[key] = this.isObject(obj[key]) ? this.deepFilterValues(obj[key], action) : obj[key];
+            }
+        }
+        return newObj;
+    },
+    
+    filter(obj = {}, filter = (key, value) => {return (true || false)}) {
+        let newObj = {};
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                if(filter(key, obj[key])){
+                    newObj[key] = obj[key];
+                }
+            }
+        }
+        return newObj;
+    },
+    
+    filterKeys(obj = {}, filter = (key) => {return (true || false)}) {
+        let newObj = {};
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                if(filter(key)){
+                    newObj[key] = obj[key];
+                }
+            }
+        }
+        return newObj;
+    },
+    
+    filterValues(obj = {}, filter = (value) => {return (true || false)}) {
+        let newObj = {};
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                if(filter(value)){
+                    newObj[key] = obj[key];
+                }
+            }
+        }
+        return newObj;
     }
-
 }
