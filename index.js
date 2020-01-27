@@ -40,24 +40,6 @@ module.exports = {
         return newObj;
     },
     
-    traverseRecursive(obj = {}, action = (key, value) => {return {key, value}}) {
-        if(Array.isArray(obj)){
-            let newArr = [];
-            for (const key in obj) {
-                const {key: newKey, value: newValue} = action('', obj[key]);
-                newArr.push(this.isObject(obj[key]) ? this.traverseRecursive(obj[key], action) : newValue);
-            }
-            return newArr;
-        } else {
-            let newObj = {};
-            for (const key in obj) {
-                const {key: newKey, value: newValue} = action(key, obj[key]);
-                newObj[newKey] = this.isObject(obj[key]) ? this.traverse(obj[key], action) : newValue;
-            }
-            return newObj;
-        }
-    },
-    
     traverseKeys(obj = {}, action = (key) => {return key}) {
         let newObj = {};
         for (const key in obj) {
