@@ -1,5 +1,4 @@
 module.exports = {
-
     map(obj = {}, action = (key, value) => {return {key, value}}) {
         let newObj = {};
         for (const key in obj) {
@@ -196,5 +195,13 @@ module.exports = {
             }
         }
         return newObj;
+    },
+    
+    invert(obj = {}) {
+        return this.map(obj, (key, value) => {
+            if(typeof key !== 'string' && typeof key !== 'number') return {key, value};
+            if(typeof value !== 'string' && typeof value !== 'number') return {key, value};
+            return {key: value, value: key};    
+        })
     }
 }

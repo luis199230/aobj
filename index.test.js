@@ -90,3 +90,8 @@ test('Test traverseValues Deep nested Object', () => {
     });
     expect(obj.b.c).toBe(3);
 })
+
+test('Invert key/values {a: "b"} => {b: "a"}', () => {
+    const obj = aobj.invert({a:"b"});
+    expect(obj.b).toBe("a");
+})

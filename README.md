@@ -341,3 +341,4 @@ console.log(newPerson);
 - [ ] filter
 - [ ] filterKeys
 - [ ] filterValues
+- [ ] invert
