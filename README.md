@@ -342,3 +342,4 @@ console.log(newPerson);
 - [ ] filterKeys
 - [ ] filterValues
 - [ ] invert
+- [ ] extractDefault

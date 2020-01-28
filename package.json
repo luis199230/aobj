@@ -1,6 +1,6 @@
 {
   "name": "aobj",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "aobj - Object Manipulation Module for Nodejs",
   "main": "index.js",
   "scripts": {

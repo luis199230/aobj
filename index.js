@@ -69,6 +69,10 @@ module.exports = {
                 return obj2;
             }, {});
     },
+    
+    extractDefault(obj = {}, keys = {}) {
+        return {...keys, ...this.extract(obj, Object.keys(keys))};
+    },
 
     has(obj, properties = [] || '') {
         if(typeof properties == 'string')

@@ -95,3 +95,8 @@ test('Invert key/values {a: "b"} => {b: "a"}', () => {
     const obj = aobj.invert({a:"b"});
     expect(obj.b).toBe("a");
 })
+
+test("Extract Default, {a: 1} => {a: '', b: ''} => {a: 1, b: ''}", () => {
+    const obj = aobj.extractDefault({a:1}, {a: '', b: ''})
+    expect(obj.b).toBe('');
+})
