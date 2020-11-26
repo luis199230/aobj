@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/aobj.iml" filepath="$PROJECT_DIR$/.idea/aobj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ts-object.iml" filepath="$PROJECT_DIR$/.idea/ts-object.iml" />
     </modules>
   </component>
 </project>

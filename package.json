@@ -1,7 +1,7 @@
 {
-  "name": "aobj",
+  "name": "ts-object",
   "version": "1.0.6",
-  "description": "aobj - Object Manipulation Module for Nodejs",
+  "description": "ts-object - Object Manipulation Module for TypeScript",
   "main": "src/index.ts",
   "scripts": {
     "test": "jest"
