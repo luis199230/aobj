@@ -4,6 +4,8 @@
   "description": "ts-object - Object Manipulation Module for TypeScript",
   "main": "src/index.ts",
   "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
     "test": "jest"
   },
   "keywords": [
@@ -30,7 +32,8 @@
   },
   "devDependencies": {
     "jest": "^26.6.3",
-    "ts-jest": "^26.4.4"
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0"
   },
   "jest": {
     "moduleFileExtensions": [
