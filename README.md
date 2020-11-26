@@ -1,14 +1,13 @@
-# aobj
-AOBJ is
-an Object Manipulation Module for Nodejs
+# tsObject
+ts-object is a forked project from aobj and is an object manipulation module for TypeScript
 
 # Setup
 Install in your project using npm
-> npm install aobj
+> npm install ts-object
 
 Require in your file as
 ````javascript
-const aobj = require('aobj');
+import tsObject from 'ts-object';
 ````
 # Methods
 
@@ -20,7 +19,7 @@ Extract keys/value into a new Object
 ````javascript
 const person = {name: 'Donald', lastname: 'Trump', favorite_color: 'red'}
 
-aobj.extract(person, ['name', 'lastname'])
+tsObject.extract(person, ['name', 'lastname'])
 // {name: 'Donald', lastname: 'Trump'}
 ````
 
@@ -32,9 +31,9 @@ Check if an Object has certain keys
 ````javascript
 const person = {name: 'Donald', lastname: 'Trump', favorite_color: 'red'}
 
-aobj.has(person, 'lastname') // true
-aobj.has(person, ['name', 'lastname']) // true
-aobj.has(person, ['name', 'lastname', 'age']) // false
+tsObject.has(person, 'lastname') // true
+tsObject.has(person, ['name', 'lastname']) // true
+tsObject.has(person, ['name', 'lastname', 'age']) // false
 ````
 
 ## clone
@@ -57,7 +56,7 @@ With Deep Cloning
 ````javascript
 const person = {name: 'Donald', lastname: 'Trump', favorite_color: 'red'}
 
-const anotherPerson = aobj.clone(person);
+const anotherPerson = tsObject.clone(person);
 anotherPerson.name = 'Mike';
 
 anotherPerson.name; // 'Mike'
@@ -72,9 +71,9 @@ Check if an Object is empty
 ````javascript
 const person = {name: 'Donald', lastname: 'Trump', favorite_color: 'red'}
 
-aobj.isEmpty({}) // true
+tsObject.isEmpty({}) // true
 
-aobj.isEmpty(person) // false
+tsObject.isEmpty(person) // false
 ````
 
 ## isObject
@@ -85,13 +84,13 @@ Check if a variable is an Object
 ````javascript
 const person = {name: 'Donald', lastname: 'Trump', favorite_color: 'red'}
 
-aobj.isObject(person) // true
-aobj.isObject({}) // true
+tsObject.isObject(person) // true
+tsObject.isObject({}) // true
 
-aobj.isObject('') // false
-aobj.isObject(new Number(1)) // false
-aobj.isObject(undefined) // false
-aobj.isObject(null) // false
+tsObject.isObject('') // false
+tsObject.isObject(new Number(1)) // false
+tsObject.isObject(undefined) // false
+tsObject.isObject(null) // false
 ````
 
 ## map
@@ -106,7 +105,7 @@ const person = {
     age: 10
 }
 
-const newPerson = aobj.map(person, (key, value) => {
+const newPerson = tsObject.map(person, (key, value) => {
     if(key == 'age'){
         key = 'birthyear';
         value = 2020 - age;
@@ -135,7 +134,7 @@ const person = {
     age: 10
 }
 
-const newPerson = aobj.map(person, (key) => {
+const newPerson = tsObject.map(person, (key) => {
     if(key == 'name') key = 'fullname';
     return key;
 });
@@ -161,7 +160,7 @@ const person = {
     age: 10
 }
 
-const newPerson = aobj.mapValues(person, (value) => {
+const newPerson = tsObject.mapValues(person, (value) => {
     if(typeof value == 'number') value += 50;
     return value;
 });
@@ -202,7 +201,7 @@ const house = {
     }
 }
 
-const newPerson = aobj.traverse(person, (key, value) => {
+const newPerson = tsObject.traverse(person, (key, value) => {
     if(key == 'age'){
         key = 'year';
         value = 2020 - age;
@@ -255,7 +254,7 @@ const house = {
     }
 }
 
-const newPerson = aobj.traverseKeys(person, (key) => {
+const newPerson = tsObject.traverseKeys(person, (key) => {
     if(key == 'a') key = 'Biggest_room';
     if(key == 'b') key = 'Small_room';
     if(key == 'c') key = 'Medium_room';
@@ -300,7 +299,7 @@ const house = {
     }
 }
 
-const newPerson = aobj.traverseValues(person, (value) => {
+const newPerson = tsObject.traverseValues(person, (value) => {
     return value + 100;
 });
 
