@@ -1,6 +1,6 @@
 {
   "name": "ts-obj",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ts-object - Object Manipulation Module for TypeScript",
   "main": "src/index.ts",
   "scripts": {
