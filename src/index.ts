@@ -218,3 +218,25 @@ export const invert = (obj = {}) => {
     return {key: value, value: key};
   })
 };
+
+export default {
+  map,
+  mapValues,
+  mapKeys,
+  traverse,
+  traverseKeys,
+  traverseValues,
+  extract,
+  extractDefault,
+  has,
+  isEmpty,
+  isObject,
+  clone,
+  deepFilter,
+  deepFilterKeys,
+  deepFilterValues,
+  filter,
+  filterKeys,
+  filterValues,
+  invert,
+};
