@@ -96,12 +96,12 @@ describe('test for methods index', () => {
 
     it('Invert key/values {a: "b"} => {b: "a"}', () => {
         const obj = tsObject.invert({a:"b"});
-        expect(obj.b).toBe("a");
+        expect(obj['b']).toBe("a");
     })
 
     it("Extract Default, {a: 1} => {a: '', b: ''} => {a: 1, b: ''}", () => {
         const obj = tsObject.extractDefault({a:1}, {a: '', b: ''})
-        expect(obj.b).toBe('');
+        expect(obj['b']).toBe('');
     })
 
     it("Extract Default, {a: 1, b:2, c:4} => ['a', 'c'] => {a:1,c:4}", () => {

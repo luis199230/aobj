@@ -11,6 +11,17 @@ export const map = (obj = {}, action = (key, value) => {
   return newObj;
 };
 
+export const mapArray = (obj = {}, action = (key, value) => {
+  return {key, value}
+}) => {
+  let newArray = [];
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      newArray.push(action(key, obj[key]));
+    }
+  }
+  return newArray;
+};
 
 export const mapValues = (obj = {}, action = (value) => {
   return value
@@ -221,6 +232,7 @@ export const invert = (obj = {}) => {
 
 export default {
   map,
+  mapArray,
   mapValues,
   mapKeys,
   traverse,
