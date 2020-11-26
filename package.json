@@ -2,7 +2,8 @@
   "name": "ts-obj",
   "version": "1.0.5",
   "description": "ts-object - Object Manipulation Module for TypeScript",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "start": "ts-node src/index.ts",
