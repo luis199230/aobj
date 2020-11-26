@@ -7,7 +7,7 @@ Install in your project using npm
 
 Require in your file as
 ````javascript
-import tsObject from 'ts-object';
+import tsObject from 'ts-obj';
 ````
 # Methods
 
