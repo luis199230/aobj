@@ -230,6 +230,16 @@ export const invert = (obj = {}) => {
   })
 };
 
+export const join = (obj = {}, glue = ','): string => {
+  const newArray = [];
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      newArray.push(obj[key]);
+    }
+  }
+  return newArray.join(glue);
+};
+
 export default {
   map,
   mapArray,
@@ -251,4 +261,5 @@ export default {
   filterKeys,
   filterValues,
   invert,
+  join,
 };
