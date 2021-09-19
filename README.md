@@ -3,7 +3,7 @@ ts-object is a forked project from aobj and is an object manipulation module for
 
 # Setup
 Install in your project using npm
-> npm install ts-object
+> npm install ts-obj
 
 Require in your file as
 ````javascript
