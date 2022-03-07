@@ -25,9 +25,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/luis199230/ts-aobj/issues"
+    "url": "https://github.com/luis199230/ts-object/issues"
   },
-  "homepage": "https://github.com/luis199230/ts-aobj#readme",
+  "homepage": "https://github.com/luis199230/ts-object#readme",
   "dependencies": {
     "typescript": "^4.0.5"
   },
